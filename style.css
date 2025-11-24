@@ -1,7 +1,7 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin:0; padding:0; box-sizing:border-box; }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     color: white;
     background: #111;
     line-height: 1.6;
@@ -15,21 +15,28 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(0, 0, 0, 0.35);
+    background: rgba(0,0,0,0.35);
     padding: 15px 10%;
     z-index: 1000;
     backdrop-filter: blur(6px);
 }
+.logo { font-size:1.5rem; font-weight:bold; }
+.menu { list-style:none; display:flex; gap:2rem; }
+.menu a { color:white; text-decoration:none; }
+.menu a:hover { text-decoration:underline; }
 
-.logo { font-size: 1.5rem; font-weight: bold; }
-.menu { list-style: none; display: flex; gap: 2rem; }
-.menu a { color: white; text-decoration: none; }
-.menu a:hover { text-decoration: underline; }
-
-/* HERO – IMMAGINE VISIBILE AL 100% */
+/* HERO – versione ultra-sicura */
 .hero {
     height: 100vh;
-    background: url('https://raw.githubusercontent.com/Dragonize2025/SitoProva/main/img/ciao.jpg') center/cover no-repeat;
+    background-image: url('https://github.com/Dragonize2025/SitoProva/blob/main/img/ciao.jpg?raw=true');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .hero h1 {
@@ -38,37 +45,24 @@ body {
     opacity: 0;
     animation: fadeIn 2s forwards;
 }
-
-.hero p {
-    font-size: 1.8rem;
+.hero p { 
+    font-size: 1.8rem; 
     opacity: 0;
     animation: fadeIn 2s 0.5s forwards;
 }
+@keyframes fadeIn { to { opacity:1; } }
 
-@keyframes fadeIn {
-    to { opacity: 1; }
-}
-
-/* SEZIONI NORMALI */
+/* SEZIONI */
 section {
     padding: 80px 10%;
     background: #222;
-    min-height: 60vh;
 }
-
-section:nth-child(even) { background: #333; }
-
+section:nth-child(even) { background:#333; }
 h2 {
-    margin-top: 0;
-    font-size: 32px;
-    border-bottom: 2px solid white;
-    display: inline-block;
-    padding-bottom: 5px;
-    margin-bottom: 2rem;
+    font-size:32px;
+    border-bottom:2px solid white;
+    display:inline-block;
+    padding-bottom:5px;
+    margin-bottom:2rem;
 }
-
-footer {
-    text-align: center;
-    padding: 2rem;
-    background: #000;
-}
+footer { text-align:center; padding:2rem; background:#000; }
