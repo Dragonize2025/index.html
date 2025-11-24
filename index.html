@@ -13,27 +13,68 @@
         scroll-behavior: smooth;
     }
 
-    /* --- Navbar elegante --- */
-    @media (max-width: 768px) {
+   /* --- Navbar principale --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* logo a sinistra, menu a destra */
+    align-items: center;
+    background: rgba(0, 0, 0, 0.35);
+    padding: 15px 40px;
+    z-index: 1000;
+    backdrop-filter: blur(6px);
+}
+
+/* Logo */
+.navbar .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Menu */
+.navbar nav {
+    display: flex;
+    flex-wrap: wrap;       /* permette di andare a capo se lo spazio finisce */
+    gap: 20px;             /* distanza tra le voci */
+    justify-content: flex-end;
+}
+
+/* Voci del menu */
+.navbar nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    letter-spacing: 1px;
+    transition: opacity 0.3s;
+    white-space: nowrap;   /* evita che le parole vadano a capo singolarmente */
+}
+
+.navbar nav a:hover {
+    opacity: 0.6;
+}
+
+/* --- Media Query per tablet e schermi stretti --- */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+
     .navbar nav {
-        display: none; /* nasconde il menu normale */
+        gap: 12px;         /* riduce leggermente lo spazio tra le voci */
     }
-    .navbar .menu-toggle {
-        display: block; /* aggiungi un’icona hamburger */
-    }
+}
 
-    .navbar a {
-        color: white;
-        margin: 0 18px;
-        text-decoration: none;
-        font-weight: 400;
-        letter-spacing: 1px;
-        transition: opacity 0.3s;
+@media (max-width: 768px) {
+    .navbar nav {
+        flex-wrap: wrap;   /* va a capo se necessario */
+        justify-content: center;
+        margin-top: 10px;
     }
+}
 
-    .navbar a:hover {
-        opacity: 0.6;
-    }
 
     /* --- HERO (Homepage) con overlay --- */
     .hero {
