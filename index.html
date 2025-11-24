@@ -115,34 +115,54 @@ section {
     background: rgba(34, 34, 34, 0.85);   /* grigio scuro semi-trasparente */
 }
 
-    /* Effetto scuro per il contrasto */
-    .hero::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.45);
-    }
+    /* Hero con immagine di sfondo a tutto schermo */
+.hero {
+    background: url('/SitoProva/img/ciao.jpg') center/cover no-repeat fixed;  /* ← path esatto per il tuo repo */
+    height: 100vh;  /* occupa tutto lo schermo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;  /* testo bianco per leggibilità */
+    position: relative;  /* opzionale, per overlay se serve */
+}
 
-    /* --- Testo nella Home --- */
-    .hero h1 {
-        font-size: 64px;
-        margin: 0;
-        font-family: 'Playfair Display', serif;
-        letter-spacing: 3px;
-        z-index: 1;
-        animation: fadeIn 2s ease-in-out;
-    }
+/* Contenuto dentro la hero (testo centrato e leggibile) */
+.hero-content {
+    background: rgba(0, 0, 0, 0.5);  /* velo semi-trasparente nero sul testo, opzionale ma bello */
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 80%;
+}
 
-    .hero p {
-        font-size: 22px;
-        margin-top: 15px;
-        z-index: 1;
-        font-weight: 300;
-        animation: fadeIn 3s ease-in-out;
-    }
+.hero h1 {
+    font-size: 4rem;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);  /* ombra per far risaltare il testo */
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+/* Le altre section rimangono grigie, ma puoi renderle semi-trasparente se vuoi l'immagine dietro tutto */
+section {
+    padding: 80px 10%;
+    background: #222;  /* o rgba(34,34,34,0.9) per trasparenza */
+}
+
+section:nth-child(even) {
+    background: #333;  /* o rgba(51,51,51,0.9) */
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 32px;
+    border-bottom: 2px solid white;
+    display: inline-block;
+    padding-bottom: 5px;
+}
 
     @keyframes fadeIn {
         from { opacity: 0; transform: translateY(20px); }
