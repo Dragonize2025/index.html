@@ -28,7 +28,7 @@ body {
 /* HERO – versione ultra-sicura */
 .hero {
     height: 100vh;
-    background-image: url('https://github.com/Dragonize2025/SitoProva/blob/main/img/ciao.jpg?raw=true');
+    background-image: url('img/ciao.jpg?raw=true');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
