@@ -1,18 +1,13 @@
-/* RESET e BASE */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     font-family: 'Arial', sans-serif;
     color: white;
-    background: #111;               /* nero di fallback */
+    background: #111;
     line-height: 1.6;
 }
 
-/* NAVBAR (torna esattamente come prima) */
+/* NAVBAR */
 .navbar {
     position: fixed;
     top: 0;
@@ -21,43 +16,52 @@ body {
     justify-content: space-between;
     align-items: center;
     background: rgba(0, 0, 0, 0.35);
-    padding: 15px 5vw;
+    padding: 15px 10%;
     z-index: 1000;
     backdrop-filter: blur(6px);
 }
 
-/* HERO con la tua immagine – FUNZIONA AL 100% sul tuo repo */
+.logo { font-size: 1.5rem; font-weight: bold; }
+.menu { list-style: none; display: flex; gap: 2rem; }
+.menu a { color: white; text-decoration: none; }
+.menu a:hover { text-decoration: underline; }
+
+/* HERO – IMMAGINE VISIBILE AL 100% */
 .hero {
     height: 100vh;
-    background: url('/SitoProva/img/ciao.jpg') center/cover no-repeat;
+    background: url('https://raw.githubusercontent.com/Dragonize2025/SitoProva/main/img/ciao.jpg') center/cover no-repeat;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    position: relative;
 }
 
-/* Titolo con fade-in (esattamente come prima) */
 .hero h1 {
-    font-size: 4.5rem;
+    font-size: 5rem;
+    margin-bottom: 1rem;
     opacity: 0;
     animation: fadeIn 2s forwards;
+}
+
+.hero p {
+    font-size: 1.8rem;
+    opacity: 0;
+    animation: fadeIn 2s 0.5s forwards;
 }
 
 @keyframes fadeIn {
     to { opacity: 1; }
 }
 
-/* Tutte le altre sezioni (grigio #222 e #333 alternate) */
+/* SEZIONI NORMALI */
 section {
     padding: 80px 10%;
     background: #222;
     min-height: 60vh;
 }
 
-section:nth-child(even) {
-    background: #333;
-}
+section:nth-child(even) { background: #333; }
 
 h2 {
     margin-top: 0;
@@ -65,4 +69,11 @@ h2 {
     border-bottom: 2px solid white;
     display: inline-block;
     padding-bottom: 5px;
+    margin-bottom: 2rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #000;
 }
