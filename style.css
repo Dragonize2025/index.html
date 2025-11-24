@@ -28,7 +28,7 @@ body {
 /* HERO – versione ultra-sicura */
 .hero {
     height: 100vh;
-    background-image: url('img/ciao.jpg?raw=true');
+    background-image: url('ciao.jpg?raw=true');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
