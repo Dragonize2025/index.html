@@ -28,10 +28,7 @@ body {
 /* HERO – versione ultra-sicura */
 .hero {
     height: 100vh;
-    background-image: url('ciao.jpg?raw=true');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: url('img/ciao.jpg') center/cover no-repeat;   /* ← questa riga */
     display: flex;
     flex-direction: column;
     align-items: center;
