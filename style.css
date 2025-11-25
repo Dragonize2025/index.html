@@ -93,7 +93,7 @@ body {
     backdrop-filter: blur(6px);
 }
 .logo { font-size:1rem; font-weight:bold; }
-.menu { list-style:none; display:flex; gap:2rem; margin-left: 400px; }
+.menu { list-style:none; display:flex; gap:2rem; margin-left: 1200px; }
 .menu a { color:white; text-decoration:none; }
 .menu a:hover { text-decoration:underline; }
 
