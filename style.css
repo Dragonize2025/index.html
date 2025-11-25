@@ -87,7 +87,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 50px;
+    margin-left: 400px;
     background: rgba(0,0,0,0.35);
     padding: 15px 2%;
     z-index: 1000; /* Lasciato alto per la barra di navigazione */
