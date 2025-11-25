@@ -9,7 +9,7 @@ body {
 .testo-overlay {
     /* Posizionamento del testo sopra l'immagine */
     position: relative; /* O absolute, a seconda di come vuoi centrare */
-    z-index: 3; /* Il livello più alto: davanti a tutto */
+    z-index: 500; /* Il livello più alto: davanti a tutto */
     
     /* Puoi mantenere il flexbox del .hero-container per centrarlo */
     text-align: center; 
