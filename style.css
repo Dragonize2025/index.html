@@ -88,7 +88,7 @@ body {
     justify-content: space-between;
     align-items: center;
     background: rgba(0,0,0,0.35);
-    padding: 10px 2%;
+    padding: 15px 2%;
     z-index: 1000; /* Lasciato alto per la barra di navigazione */
     backdrop-filter: blur(6px);
 }
