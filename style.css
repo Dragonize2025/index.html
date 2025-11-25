@@ -87,13 +87,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 400px;
     background: rgba(0,0,0,0.35);
     padding: 15px 2%;
     z-index: 1000; /* Lasciato alto per la barra di navigazione */
     backdrop-filter: blur(6px);
 }
-.logo { font-size:1rem; font-weight:bold; }
+.logo { font-size:1rem; font-weight:bold; margin-left: 400px; }
 .menu { list-style:none; display:flex; gap:2rem; }
 .menu a { color:white; text-decoration:none; }
 .menu a:hover { text-decoration:underline; }
