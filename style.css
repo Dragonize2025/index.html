@@ -6,7 +6,35 @@ body {
     background: #111;
     line-height: 1.6;
 }
+.testo-overlay {
+    /* Posizionamento del testo sopra l'immagine */
+    position: relative; /* O absolute, a seconda di come vuoi centrare */
+    z-index: 3; /* Il livello più alto: davanti a tutto */
+    
+    /* Puoi mantenere il flexbox del .hero-container per centrarlo */
+    text-align: center; 
+    color: white; /* Consigliato per la visibilità */
+}
+/* Stile base del sottotitolo */
+.sottotitolo-hero {
+    /* ... le tue vecchie regole di stile (font-size, margin, ecc.) ... */
+    
+    /* Regola per l'animazione di Fade-in */
+    opacity: 0; /* Inizia invisibile */
+    animation: fadeIn 2s ease-in 1s forwards; /* Esempio di animazione */
+}
 
+/* Definizione dell'animazione (metti questo alla fine del tuo file CSS) */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Opzionale: per un effetto che sale */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 /* NAVBAR */
 .navbar {
     position: fixed;
