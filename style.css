@@ -85,7 +85,7 @@ body {
     top: 0;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     background: rgba(0,0,0,0.35);
     padding: 15px 2%;
@@ -93,7 +93,7 @@ body {
     backdrop-filter: blur(6px);
 }
 .logo { font-size:1rem; font-weight:bold; }
-.menu { list-style:none; display:flex; gap:2rem; margin-left: 1200px; }
+.menu { list-style:none; display:flex; gap:2rem; margin-left: auto; }
 .menu a { color:white; text-decoration:none; }
 .menu a:hover { text-decoration:underline; }
 
