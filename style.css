@@ -91,12 +91,7 @@ body {
     z-index: 1000; /* Lasciato alto per la barra di navigazione */
     backdrop-filter: blur(6px);
 }
-.logo a {
-    color: white; /* Ripristina il colore bianco */
-    text-decoration: none; /* Rimuovi la sottolineatura */
-    /* Assicurati che il link erediti la dimensione e il grassetto */
-    font-size: 1.5rem; 
-    }
+.logo a { color: white; text-decoration: none; }
 .logo { font-size:1rem; font-weight:bold; }
 .menu { list-style:none; display:flex; gap:2rem; margin-left: auto; }
 .menu a { color:white; text-decoration:none; }
