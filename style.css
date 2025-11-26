@@ -63,7 +63,7 @@ body {
     
     /* Regola per l'animazione di Fade-in */
     color: white; /* Rende il testo visibile sullo sfondo scuro */
-    font-size: 5vw; /* Rende il testo molto grande, adattandosi alla finestra */
+    font-size: 2vw; /* Rende il testo molto grande, adattandosi alla finestra */
     font-weight: 700; /* Lo rende in grassetto */
     
     /* 2. EFFETTO OUTLINE (Contorno) */
