@@ -11,6 +11,19 @@ body {
     line-height: 1.6;
 }
 
+.nome-principale {
+    /* 1. Stili Base: Colore e Dimensione */
+    color: white; /* Rende il testo visibile sullo sfondo scuro */
+    font-size: 5vw; /* Rende il testo molto grande, adattandosi alla finestra */
+    font-weight: 700; /* Lo rende in grassetto */
+    
+    /* 2. EFFETTO OUTLINE (Contorno) */
+    text-shadow: 
+        2px 2px 0 #000, 
+        -2px 2px 0 #000, 
+        2px -2px 0 #000,
+        -2px -2px 0 #000;
+}
 /* 1. CONTENITORE PRINCIPALE - Definisce l'area e il contesto di posizionamento */
 .hero-container {
     font-size: 3rem;
