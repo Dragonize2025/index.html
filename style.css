@@ -62,6 +62,16 @@ body {
     /* Regole di stile precedenti... */
     
     /* Regola per l'animazione di Fade-in */
+    color: white; /* Rende il testo visibile sullo sfondo scuro */
+    font-size: 5vw; /* Rende il testo molto grande, adattandosi alla finestra */
+    font-weight: 700; /* Lo rende in grassetto */
+    
+    /* 2. EFFETTO OUTLINE (Contorno) */
+    text-shadow: 
+        2px 2px 0 #000, 
+        -2px 2px 0 #000, 
+        2px -2px 0 #000,
+        -2px -2px 0 #000;
     opacity: 0; 
     animation: fadeIn 2s ease-in 1s forwards; 
 }
