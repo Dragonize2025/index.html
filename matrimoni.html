@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Three Circular Images</title>
+  <style>
+    html,body { height:100%; margin:0; background:#ffffff; }
+    .wrap { display:flex; align-items:center; justify-content:center; height:100%; }
+    svg { max-width:100%; height:auto; display:block; }
+    a { display:block; }
+  </style>
+</head>
+<body>
+  
+  <div class="wrap">
+    
+    <!-- Entire graphic becomes a clickable link -->
+    
+      <svg viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
+
+        <!-- ===== MASKS ===== -->
+
+        <clipPath id="clip-left">
+          <circle cx="280" cy="300" r="150" />
+        </clipPath>
+
+        <clipPath id="clip-right">
+          <circle cx="720" cy="300" r="150" />
+        </clipPath>
+
+        <clipPath id="clip-center">
+          <circle cx="500" cy="300" r="250" />
+        </clipPath>
+
+        <!-- ===== IMAGES ===== -->
+
+        <image href="images/foto1.jpg"
+               x="130" y="150" width="300" height="300"
+               clip-path="url(#clip-left)" preserveAspectRatio="xMidYMid slice" />
+
+        <image href="images/foto2.jpg"
+               x="570" y="150" width="300" height="300"
+               clip-path="url(#clip-right)" preserveAspectRatio="xMidYMid slice" />
+
+        <image href="images/foto3.jpg"
+               x="250" y="50" width="500" height="500"
+               clip-path="url(#clip-center)" preserveAspectRatio="xMidYMid slice" />
+
+        <!-- ===== OUTLINES ===== -->
+
+        <circle cx="280" cy="300" r="150"
+                fill="none" stroke="black" stroke-width="12"
+                vector-effect="non-scaling-stroke" />
+
+        <circle cx="720" cy="300" r="150"
+                fill="none" stroke="black" stroke-width="12"
+                vector-effect="non-scaling-stroke" />
+
+        <circle cx="500" cy="300" r="250"
+                fill="none" stroke="black" stroke-width="30"
+                vector-effect="non-scaling-stroke" />
+
+      </svg>
+    
+
+  </div>
+  
+</body>
+</html>

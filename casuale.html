@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Immagine Casuale</title>
+</head>
+<body>
+
+  <img id="randomImage" src="" alt="Immagine casuale" style="width:300px;">
+
+  <script>
+    // Lista delle immagini nella cartella
+    const images = [
+      "images/foto1.jpg",
+      "images/foto2.jpg",
+      "images/foto3.jpg",
+      "images/foto4.jpg"
+    ];
+
+    // Seleziona un'immagine casualmente
+    const randomIndex = Math.floor(Math.random() * images.length);
+    const randomImage = images[randomIndex];
+
+    // Imposta l'immagine scelta nell'elemento <img>
+    document.getElementById("randomImage").src = randomImage;
+  </script>
+
+</body>
+</html>
