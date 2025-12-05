@@ -128,62 +128,30 @@ body {
 /* ==================== HERO SLIDESHOW ==================== */
 .hero-container {
     position: relative;
-    width: 100%;
     height: 100vh;
-    overflow: hidden;
-    background: #1a1a1a;
-}
-
-.slideshow-background {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    filter: blur(30px);
-    transform: scale(1.1);
-    z-index: 0;
-    transition: background-image 1s ease-in-out;
-}
-
-.slideshow-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 400%;
-    height: 100%;
-    display: flex;
-    transition: transform 1s ease-in-out;
-    z-index: 1;
-}
-
-.slide {
-    width: 25%;
-    height: 100%;
-    flex-shrink: 0;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: #000;
 }
 
-.slide img {
-    width: 100%;
+.hero-wrapper {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
     height: 100%;
-    object-fit: contain;
-    object-position: center;
+    z-index: 1;
 }
 
 /* Text Overlay */
 .text-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
     z-index: 10;
+    position: relative;
     pointer-events: none;
+    text-align: center;
 }
 
 .text-overlay h1 {
@@ -237,7 +205,7 @@ section p {
     line-height: 1.8;
 }
 
-/* Work and Exhibition Grids */
+/* ==================== WORK AND EXHIBITION GRIDS ==================== */
 .work-subsection,
 .exhibition-subsection {
     margin-top: 3rem;
@@ -246,12 +214,49 @@ section p {
 .work-grid,
 .exhibition-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 30px;
     margin-top: 2rem;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.work-item,
+/* Work item - just a link wrapper */
+.work-item {
+    display: block;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.work-item:hover {
+    transform: scale(1.05);
+}
+
+/* Preview wrapper for slideshows in Varie section (ritratti/paesaggi) */
+.preview-wrapper {
+    width: 300px;
+    height: 300px; 
+    position: relative;
+    
+    /* FIX: If you want squares, use border-radius: 0; */
+    border-radius: 50%; /* Remove or change this line for non-oval shapes */
+    
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: #000;
+    margin: 0 auto;
+}
+
+.preview-wrapper .fading-slideshow {
+    background: transparent;
+}
+
+.preview-wrapper .fading-slide {
+    object-fit: cover;
+}
+
+/* Exhibition items (for Mostre section) */
 .exhibition-item {
     position: relative;
     overflow: hidden;
@@ -262,9 +267,13 @@ section p {
     border: 2px solid rgba(255, 255, 255, 0.3);
     display: block;
     text-decoration: none;
+    transition: transform 0.3s ease;
 }
 
-.work-item img,
+.exhibition-item:hover {
+    transform: scale(1.05);
+}
+
 .exhibition-item img {
     width: 100%;
     height: 100%;
@@ -273,11 +282,9 @@ section p {
     transition: transform 0.5s ease;
 }
 
-.work-item:hover img,
 .exhibition-item:hover img {
     transform: scale(1.2);
 }
-
 
 /* ==================== CONTATTI ==================== */
 #contatti a {

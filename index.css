@@ -177,6 +177,24 @@ section {
     background: #0f0f0f;
 }
 
+.varie-gallery-wrapper {
+    display: grid;
+    /* Two equal columns for the two subsections */
+    grid-template-columns: 1fr 1fr; 
+    gap: 50px; /* Space between the two blocks */
+    max-width: 1000px;
+    margin: 3rem auto 0 auto; /* Center the wrapper */
+}
+
+.mostre-gallery-wrapper {
+    display: grid;
+    /* Two columns for the two subsections */
+    grid-template-columns: 1fr 1fr; 
+    gap: 50px; /* Space between the two blocks */
+    max-width: 1000px;
+    margin: 3rem auto 0 auto; /* Center the wrapper */
+}
+
 section:nth-child(even) {
     background: #1a1a1a;
 }
@@ -206,11 +224,6 @@ section p {
 }
 
 /* ==================== WORK AND EXHIBITION GRIDS ==================== */
-.work-subsection,
-.exhibition-subsection {
-    margin-top: 3rem;
-}
-
 .work-grid,
 .exhibition-grid {
     display: grid;
@@ -218,8 +231,15 @@ section p {
     gap: 30px;
     margin-top: 2rem;
     max-width: 350px;
-    margin-left: auto;
-    margin-right: auto;
+    /* Removed auto margins as centering is now handled by the parent wrapper */
+}
+
+.lavori-gallery-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    gap: 30px; 
+    max-width: 1200px; /* Increased max-width to accommodate three columns */
+    margin: 3rem auto 0 auto; 
 }
 
 /* Work item - just a link wrapper */

@@ -3,9 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
     <title>Matteo Mattielli - Fotografo</title>
+    
     <link rel="stylesheet" href="index.css">
 
+    <style>
+        :root {
+            /* Variables match JS duration (4000ms display, 2000ms transition) */
+            --fade-duration: 2000ms;
+        }
+
+        /* --- STYLES FOR JS-INJECTED SLIDES --- */
+        .fading-slideshow {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .fading-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity var(--fade-duration) ease-in-out;
+            z-index: 1;
+        }
+
+        .fading-slide.visible {
+            opacity: 1;
+            z-index: 2;
+        }
+    </style>
 </head>
 <body>
 
@@ -17,38 +51,31 @@
             <li class="dropdown">
                 <a href="#lavori">Lavori</a>
                 <ul class="dropdown-menu">
-                    <li><a href="#ritratti">Ritratti</a></li>
-                    <li><a href="#paesaggi">Paesaggi</a></li>
+                    <li><a href="matrimoni.html">Matrimoni</a></li>
                 </ul>
             </li>
             <li class="dropdown">
                 <a href="#mostre">Mostre</a>
                 <ul class="dropdown-menu">
-                    <li><a href="mostra2024.html">Mostra 2024</a></li>
-                    <li><a href="mostra2023.html">Mostra 2023</a></li>
+                    <li><a href="mostra2024.html">Tutte giù da terra</a></li>
+                    <li><a href="mostra2023.html">Da 100 a 0</a></li>
                 </ul>
             </li>
-            <li><a href="#varie">Varie</a></li>
+            <li class="dropdown">
+                <a href="#varie">Varie</a>
+                <ul class="dropdown-menu">
+                    <li><a href="ritratti.html">Ritratti</a></li>
+                    <li><a href="paesaggi.html">Paesaggi</a></li>
+                </ul>
+            </li>
             <li><a href="#progetti">Progetti</a></li>
             <li><a href="#contatti">Contatti</a></li>
         </ul>
     </nav>
 
     <div class="hero-container">
-        <div class="slideshow-background"></div>
-        <div class="slideshow-wrapper">
-            <div class="slide" data-index="0">
-                <img src="img/foto1.jpg" alt="Photo 1">
-            </div>
-            <div class="slide" data-index="1">
-                <img src="img/foto2.jpg" alt="Photo 2">
-            </div>
-            <div class="slide" data-index="2">
-                <img src="img/foto3.jpg" alt="Photo 3">
-            </div>
-            <div class="slide" data-index="3">
-                <img src="img/foto1.jpg" alt="Photo 1">
-            </div>
+        <div class="hero-wrapper">
+            <div id="hero-slideshow" class="fading-slideshow"></div>
         </div>
 
         <div class="text-overlay">
@@ -60,8 +87,6 @@
     <section id="lavori">
         <h2>Lavori</h2>
         <p>Una selezione dei miei lavori, suddivisi per categorie.</p>
-        
-        
     </section>
 
     <section id="mostre">
@@ -69,11 +94,8 @@
         <p>In questa sezione pubblicherò le mostre fotografiche che ho realizzato nel tempo.</p>
         
         <div id="mostra2024" class="exhibition-subsection">
-            <h3>Mostra 2024</h3>
+            <h3>Tutte giù da terra</h3>
             <div class="exhibition-grid">
-                <a href="mostra2024.html" class="exhibition-item">
-                    <img src="img/mostra2024/mostra2024-1.jpg" alt="Mostra 2024 - 1">
-                </a>
                 <a href="mostra2024.html" class="exhibition-item">
                     <img src="img/mostra2024/mostra2024-2.jpg" alt="Mostra 2024 - 2">
                 </a>
@@ -81,14 +103,11 @@
         </div>
 
         <div id="mostra2023" class="exhibition-subsection">
-            <h3>Mostra 2023</h3>
+            <h3>Da 100 a 0</h3>
             <div class="exhibition-grid">
                 <a href="mostra2023.html" class="exhibition-item">
                     <img src="img/mostra2023/mostra2023-1.jpg" alt="Mostra 2023 - 1">
-                </a>
-                <a href="mostra2023.html" class="exhibition-item">
-                    <img src="img/mostra2023/mostra2023-2.jpg" alt="Mostra 2023 - 2">
-                </a>
+                  </a>
             </div>
         </div>
     </section>
@@ -96,45 +115,14 @@
     <section id="varie">
         <h2>Varie</h2>
         <p>Una raccolta di fotografie di varia natura, singole o in piccole serie.</p>
+        
         <div id="ritratti" class="work-subsection">
             <h3>Ritratti</h3>
             <div class="work-grid">
                 <a href="ritratti.html" class="work-item">
-                    <img id="randomImage" src="" alt="Immagine casuale" style="width:300px;">
-
-  <script>
-    // Lista delle immagini nella cartella
-    const images = [
-      "img/ritratti/01.jpg",
-      "img/ritratti/02.jpg",
-      "img/ritratti/03.jpg",
-      "img/ritratti/04.jpg",
-      "img/ritratti/05.jpg",
-      "img/ritratti/06.jpg",
-      "img/ritratti/07.jpg",
-      "img/ritratti/08.jpg",
-      "img/ritratti/09.jpg",
-      "img/ritratti/10.jpg",
-      "img/ritratti/11.jpg",
-      "img/ritratti/12.jpg",
-      "img/ritratti/13.jpg",
-      "img/ritratti/14.jpg",
-      "img/ritratti/15.jpg",
-      "img/ritratti/16.jpg",
-      "img/ritratti/17.jpg",
-      "img/ritratti/18.jpg",
-      "img/ritratti/19.jpg",
-      "img/ritratti/20.jpg",
-      "img/ritratti/21.jpg"
-    ];
-
-    // Seleziona un'immagine casualmente
-    const randomIndex = Math.floor(Math.random() * images.length);
-    const randomImage = images[randomIndex];
-
-    // Imposta l'immagine scelta nell'elemento <img>
-    document.getElementById("randomImage").src = randomImage;
-  </script>
+                    <div class="preview-wrapper">
+                        <div id="ritratti-slideshow" class="fading-slideshow"></div>
+                    </div>
                 </a>
             </div>
         </div>
@@ -143,33 +131,9 @@
             <h3>Paesaggi</h3>
             <div class="work-grid">
                 <a href="paesaggi.html" class="work-item">
-                    <img id="randomImage1" src="" alt="Immagine casuale" style="width:300px;">
-
-  <script>
-    // Lista delle immagini nella cartella
-    const images1 = [
-        "img/paesaggi/01.jpg",
-        "img/paesaggi/02.jpg",
-        "img/paesaggi/03.jpg",
-        "img/paesaggi/04.jpg",
-        "img/paesaggi/05.jpg",
-        "img/paesaggi/06.jpg",
-        "img/paesaggi/07.jpg",
-        "img/paesaggi/08.jpg",
-        "img/paesaggi/09.jpg",
-        "img/paesaggi/10.jpg",
-        "img/paesaggi/11.jpg",
-        "img/paesaggi/12.jpg",
-        "img/paesaggi/13.jpg" 
-    ];
-
-    // Seleziona un'immagine casualmente
-    const randomIndex1 = Math.floor(Math.random() * images1.length);
-    const randomImage1 = images1[randomIndex1];
-
-    // Imposta l'immagine scelta nell'elemento <img>
-    document.getElementById("randomImage1").src = randomImage1;
-  </script>
+                    <div class="preview-wrapper">
+                        <div id="paesaggi-slideshow" class="fading-slideshow"></div>
+                    </div>
                 </a>
             </div>
         </div>

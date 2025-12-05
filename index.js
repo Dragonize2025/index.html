@@ -43,23 +43,33 @@ function createSlideshow(containerId, imageList) {
     if(slides.length < 2) return;
 
     let currentIndex = 0;
-    const duration = 4000; // Time between changes (4 seconds)
+    
+    // Time the slide is fully displayed (4000ms)
+    const displayDuration = 4000; 
+    // Time it takes to fade (2000ms from CSS variable)
+    const fadeDuration = 2000; 
+    // Total interval = display time + fade time (4000ms + 2000ms = 6000ms)
+    const totalDuration = displayDuration + fadeDuration; 
 
     // Start slideshow interval
     setInterval(() => {
         const activeSlide = slides[currentIndex];
+        
+        // 1. Calculate the next index
         currentIndex = (currentIndex + 1) % slides.length;
         const nextSlide = slides[currentIndex];
+        
+        // 2. Hide the currently visible slide. 
+        // This is done BEFORE the next slide is made visible for a true cross-fade.
+        // It triggers the fade-out from z-index: 2 (visible) to z-index: 1 (hidden)
+        activeSlide.classList.remove('visible');
 
-        // 1. Make next slide visible (it sits on top due to z-index: 2 in CSS)
+        // 3. Make the next slide visible.
+        // This triggers the fade-in (opacity: 0 to 1) and sets z-index: 2
+        // Since the previous slide is also fading out, this creates the cross-fade effect.
         nextSlide.classList.add('visible');
 
-        // 2. Wait for fade transition (2000ms) to finish, then hide the previous slide
-        setTimeout(() => {
-            activeSlide.classList.remove('visible');
-        }, 2000); 
-
-    }, duration);
+    }, totalDuration);
 }
 
 // ==================== NAVBAR OPACITY ON SCROLL ====================
