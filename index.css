@@ -51,6 +51,37 @@ body {
     .menu.menu-open {
         display: flex;
     }
+
+    .lavori-gallery-wrapper,
+    .mostre-gallery-wrapper,
+    .varie-gallery-wrapper {
+        grid-template-columns: 1fr; /* Stack into a single column */
+        gap: 50px;
+        max-width: 400px; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    /* FIX: Remove the large 3rem top margin from the subsections.
+       This margin was causing misalignment when the items were stacked vertically.
+       Spacing is now cleanly controlled by the wrapper's 'gap' property. */
+    .exhibition-subsection,
+    .work-subsection {
+        margin-top: 0; 
+    }
+    
+    /* Center the title within the subsection */
+    .work-subsection h3,
+    .exhibition-subsection h3 {
+        text-align: center;
+    }
+    
+    /* Ensure images/previews stay centered and don't overflow */
+    .preview-wrapper,
+    .exhibition-item {
+        width: 250px; 
+        height: 250px;
+    }
 }
 
 .logo a {
